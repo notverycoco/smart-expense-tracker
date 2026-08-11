@@ -6,6 +6,9 @@ require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const verifyToken = require("./middleware/authMiddleware");
 const incomeRoutes = require("./routes/incomeRoutes");
+const expenseRoutes = require("./routes/expenseRoutes");
+const budgetRoutes = require("./routes/budgetRoutes");
+
 
 const app = express();
 
@@ -23,6 +26,9 @@ app.post("/test", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/income", incomeRoutes);
+app.use("/api/expense", expenseRoutes);
+app.use("/api/budget", budgetRoutes);
+
 
 app.get("/profile", verifyToken, (req, res) => {
 
