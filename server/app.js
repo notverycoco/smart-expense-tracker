@@ -8,6 +8,7 @@ const verifyToken = require("./middleware/authMiddleware");
 const incomeRoutes = require("./routes/incomeRoutes");
 const expenseRoutes = require("./routes/expenseRoutes");
 const budgetRoutes = require("./routes/budgetRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
 
 
 const app = express();
@@ -28,6 +29,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/income", incomeRoutes);
 app.use("/api/expense", expenseRoutes);
 app.use("/api/budget", budgetRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 
 app.get("/profile", verifyToken, (req, res) => {
