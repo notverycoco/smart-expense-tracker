@@ -9,7 +9,7 @@ const incomeRoutes = require("./routes/incomeRoutes");
 const expenseRoutes = require("./routes/expenseRoutes");
 const budgetRoutes = require("./routes/budgetRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
-
+const analyticsRoutes = require("./routes/analyticsRoutes");
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.use("/api/income", incomeRoutes);
 app.use("/api/expense", expenseRoutes);
 app.use("/api/budget", budgetRoutes);
 app.use("/api/dashboard", dashboardRoutes);
-
+app.use("/api/analytics", analyticsRoutes);
 
 app.get("/profile", verifyToken, (req, res) => {
 
