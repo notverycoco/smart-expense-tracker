@@ -10,6 +10,7 @@ const expenseRoutes = require("./routes/expenseRoutes");
 const budgetRoutes = require("./routes/budgetRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
+const savingsGoalRoutes = require("./routes/savingsGoalRoutes");
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use("/api/expense", expenseRoutes);
 app.use("/api/budget", budgetRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/analytics", analyticsRoutes);
+app.use("/api/savings-goals", savingsGoalRoutes);
 
 app.get("/profile", verifyToken, (req, res) => {
 
